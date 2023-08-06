@@ -1,0 +1,51 @@
+<div class="new-depense-container">
+  <h2>Ajouter une dépense</h2>
+
+  <form [formGroup]="depenseForm" (ngSubmit)="createDepense()">
+    <div class="form-group">
+      <label for="nom">Nom</label>
+      <input type="text" id="nom" formControlName="nom" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nom.errors }" />
+      <div *ngIf="submitted && f.nom.errors" class="invalid-feedback">
+        Le nom est requis.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="date">Date</label>
+      <input type="date" id="date" formControlName="date" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.date.errors }" />
+      <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+        La date est requise.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="montant">Montant</label>
+      <input type="number" id="montant" formControlName="montant" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.montant.errors }" />
+      <div *ngIf="submitted && f.montant.errors" class="invalid-feedback">
+        Le montant est requis.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }"></textarea>
+      <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+        La description est requise.
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label for="categorie">Categorie</label>
+        <select name="category" formControlName="categorie">
+          <option value="">Sélectionnez une catégorie</option>
+          <option *ngFor="let category of categories" [value]="category.category_id">{{ category.nom }}</option>
+        </select>
+        
+      </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary" mat-dialog-close >Ajouter</button>
+      <button type="button" class="btn btn-secondary" mat-dialog-close>Annuler</button>
+    </div>
+  </form>
+</div>

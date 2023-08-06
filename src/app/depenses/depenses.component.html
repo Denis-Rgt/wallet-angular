@@ -1,0 +1,48 @@
+<app-header></app-header>
+
+<div class="add_depense" (click)="openNewDepensePopup()">
+  <img src="../../assets/plus.png" alt="Logo d'ajout" id="add_img">
+  <button >Ajouter une dépense</button>
+</div>
+
+<div class="filter_div">
+
+  <div class="category_filter">
+    <label for="category">Catégorie :</label>
+    <select [(ngModel)]="selectedCategories" name="selectedCategories">
+      <option value="">Toutes les catégories</option>
+      <option *ngFor="let category of categories" [value]="category.category_id">{{ category.nom }}</option>
+    </select>
+  </div>
+
+  <div id="search" class="search">
+  <input type="text" [(ngModel)]="searchTerm"  placeholder="Rechercher une dépense">
+  <button mat-button (click)="resetSearch()">Effacer</button>
+  </div>
+
+</div>
+
+<div class="card-container">
+
+  <div class="card" *ngFor="let depense of depenses | filter: searchTerm : selectedCategories">
+    <div class="card-content" (click)="editDepense(depense)">
+      <div class="card-image" >
+        <img src='{{ "../../../../assets/category-img/" + depense.category_id + ".png" }}' alt="Icone de la catégorie">
+      </div>
+
+      <div class="card-body">
+        <h3>{{ depense.nom }}</h3>
+        <p class="categorie">{{ getCategoryName(depense.category_id) }}</p>
+      </div>
+
+      <div class="card-price">
+        <p class="montant">{{ depense.montant }} €</p>
+      </div>
+    </div>
+    <div class="card-delete">
+      <img src="../../../../assets/delete.png" alt="Supprimer" (click)="deleteDepense(depense.depense_id)">
+    </div>
+  </div>
+</div>
+
+

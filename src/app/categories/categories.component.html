@@ -1,0 +1,12 @@
+<app-header></app-header>
+<button (click)="openNewCategoryPopup()">Ajouter une Catégorie</button>
+<div class="categories-container">
+    <ul class="categories-list">
+      <li *ngFor="let category of categories">
+        <span class="category-name">{{ category.nom }}</span>
+        <button mat-button (click)="editCategory(category)">Modifier</button>
+        <button mat-button (click)="deleteCategory(category.category_id)">Supprimer</button>
+      </li>
+    </ul>
+  </div>
+  
