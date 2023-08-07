@@ -1,0 +1,39 @@
+.edit-category-container {
+    background-color: white;
+    height: 100%;
+}
+
+.edit-category-header{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+.close-edit-category img {
+    width: 20px;
+    height: 20px;
+    margin: 5px 15px;
+    cursor: pointer;
+}
+.edit-category-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.form-group {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+.form-group button {
+    height: 33px;
+    border: 1px solid #000;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #000;
+    cursor: pointer;
+    margin: 10px auto 0 auto;
+    width: 80%;
+}

@@ -2,34 +2,44 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
     background-color: #fff;
   }
-  
-  .logo img {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-  }
-  
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  nav li {
-    margin-right: 10px;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .logout img {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-  }
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  margin: 0 30px;
+}
+nav {
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+nav li {
+  margin-right: 10px;
+}
+nav a {
+  text-decoration: none;
+}
+.header-link {
+  color: #d7d7d7;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0 15px;
+}
+.logout img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.active{
+  color: #000; 
+  font-size: 18px; 
+  font-weight: bold; 
+}

@@ -27,7 +27,7 @@
   <div class="card" *ngFor="let depense of depenses | filter: searchTerm : selectedCategories">
     <div class="card-content" (click)="editDepense(depense)">
       <div class="card-image" >
-        <img src='{{ "../../../../assets/category-img/" + depense.category_id + ".png" }}' alt="Icone de la catégorie">
+        <img src='{{ "../../../../assets/category-img/" + depense.category_id + ".png" }}' onerror="this.src='../../../../assets/category-img/default.png'" alt="Icone de la catégorie">
       </div>
 
       <div class="card-body">

@@ -1,12 +1,28 @@
 <app-header></app-header>
-<button (click)="openNewCategoryPopup()">Ajouter une Catégorie</button>
-<div class="categories-container">
-    <ul class="categories-list">
-      <li *ngFor="let category of categories">
-        <span class="category-name">{{ category.nom }}</span>
-        <button mat-button (click)="editCategory(category)">Modifier</button>
-        <button mat-button (click)="deleteCategory(category.category_id)">Supprimer</button>
-      </li>
-    </ul>
+
+<div class="add-category" (click)="openNewCategoryPopup()">
+  <img src="../../assets/plus.png" alt="Logo d'ajout" id="add_img">
+  <button >Ajouter une catégorie</button>
+</div>
+
+
+
+<div>
+    <div   class="card-container">
+      <div *ngFor="let category of categories" class="card">
+        <div class="card-content" (click)="editCategory(category)">
+          <div class="card-image" >
+            <img src='{{ "../../../../assets/category-img/" + category.category_id + ".png" }}' onerror="this.src='../../../../assets/category-img/default.png'" alt="Icone de la catégorie">
+          </div>
+    
+          <div class="card-body">
+            <h3>{{ category.nom }}</h3>
+          </div>
+        </div>
+        <div class="card-delete">
+          <img src="../../../../assets/delete.png" alt="Supprimer" (click)="deleteCategory(category.category_id)">
+        </div>
+      </div>
+    </div>
   </div>
   
