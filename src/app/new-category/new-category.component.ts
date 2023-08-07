@@ -38,6 +38,7 @@ export class NewCategoryComponent {
     this.categoryService.addCategory(this.f.nom.value).subscribe(
       (response: any) => {
         console.log(response);
+        this.categoryCreated.emit();
       },
       (error: any) => {
         console.log(error);

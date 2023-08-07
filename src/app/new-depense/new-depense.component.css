@@ -1,0 +1,49 @@
+.new-depense-container {
+    background-color: white;
+    height: 100%;
+}
+
+.new-depense-header{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    
+}
+.close-new-depense-hidden  {
+    width: 20px;
+    height: 20px;
+    margin: 5px 15px;
+}
+.close-new-depense img {
+    width: 20px;
+    height: 20px;
+    margin: 5px 15px;
+    cursor: pointer;
+}
+.new-depense-form {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.form-group {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+.form-group button {
+    height: 33px;
+    border: 1px solid #000;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #000;
+    cursor: pointer;
+    margin-top: 10px;
+
+}
+#new-depense-description {
+    width: 90%;
+}
+.invalid-feedback {
+    color: red;
+}

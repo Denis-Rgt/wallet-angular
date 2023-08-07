@@ -20,7 +20,7 @@ export interface Category {
 
 export class EditCategoryComponent {
   
-  @Output() categoryCreated = new EventEmitter<any>();
+  @Output() categoryEdited = new EventEmitter<any>();
 
   categoryForm: FormGroup;
   submitted = false;
@@ -51,6 +51,7 @@ export class EditCategoryComponent {
     this.categoryService.editCategory(this.fullCategory.category_id, this.f.nom.value).subscribe(
       (response: any) => {
         console.log(response);
+        this.categoryEdited.emit();
       },
       (error: any) => {
         console.log(error);

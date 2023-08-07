@@ -1,7 +1,11 @@
 <div class="new-category-container">
-    <h2>Ajouter une dépense</h2>
+  <div class="new-category-header">
+    <div class="close-new-category-hidden"></div>
+    <div><h2>Ajouter une catégorie</h2></div>
+    <div class="close-new-category"><img src="../../../../assets/delete.png" mat-dialog-close alt=""></div>
+  </div>
   
-    <form [formGroup]="categoryForm" (ngSubmit)="createCategory()">
+    <form [formGroup]="categoryForm" (ngSubmit)="createCategory()" class="new-category-form">
       <div class="form-group">
         <label for="nom">Nom</label>
         <input type="text" id="nom" formControlName="nom" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nom.errors }" />
@@ -11,7 +15,7 @@
       </div>
   
       <div class="form-group">
-        <button type="submit" class="btn btn-primary" mat-dialog-close >Ajouter</button>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
         <button type="button" class="btn btn-secondary" mat-dialog-close>Annuler</button>
       </div>
     </form>

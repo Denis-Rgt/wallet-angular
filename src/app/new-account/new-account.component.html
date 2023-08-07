@@ -1,18 +1,30 @@
+
+<div class="login-container">
+
 <h1>Welcome to your wallet</h1>
-<form [formGroup]="newAccountForm" (ngSubmit)="createAccount()">
-    <div>
+
+<form [formGroup]="newAccountForm" (ngSubmit)="createAccount()" class="login-form">
+    
+    <div class="form-group">
         <label for="nom">Nom:</label>
         <input type="text" id="nom" formControlName="nom" required>
       </div>
-    <div>
+    <div class="form-group">
       <label for="email">E-mail:</label>
       <input type="email" id="email" formControlName="email" required>
     </div>
-    <div>
+    <div class="form-group">
       <label for="password">Mot de passe:</label>
       <input type="password" id="password" formControlName="password" required>
     </div>
-    <div>
+    <div class="form-group">
       <button type="submit" [disabled]="!newAccountForm.valid">Créer mon compte</button>
     </div>
+
+    <div class="form-group" id="gotoLogin" >
+      <div> J'ai déjà un compte :</div>
+      <button (click)="gotoLogin()">Se connecter</button>
+    </div>
+    
   </form>
+</div>

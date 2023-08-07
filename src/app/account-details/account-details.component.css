@@ -1,37 +1,31 @@
-.edit-depense-container {
+.account-details-container {
     background-color: white;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.edit-depense-header{
+.account-details-header{
     display: flex;
     justify-content: space-between;
     padding-top: 10px;
+    width: 100%;
     
 }
-.close-edit-depense-hidden  {
+.close-account-details-hidden  {
     width: 20px;
     height: 20px;
     margin: 5px 15px;
 }
-.close-edit-depense img {
+.close-account-details img {
     width: 20px;
     height: 20px;
     margin: 5px 15px;
     cursor: pointer;
 }
-.edit-depense-form {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-.form-group {
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-}
-.form-group button {
+
+button {
     height: 33px;
     border: 1px solid #000;
     color: #fff;
@@ -39,11 +33,4 @@
     background-color: #000;
     cursor: pointer;
     margin-top: 10px;
-
-}
-#edit-depense-description {
-    width: 90%;
-}
-.invalid-feedback {
-    color: red;
 }

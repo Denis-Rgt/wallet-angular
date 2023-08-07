@@ -46,9 +46,7 @@ export class NewDepenseComponent {
     });
   }
 
-  get f() {
-    return this.depenseForm.controls;
-  }
+  
   getCategories() {
     this.categoriesService.getCategories().subscribe(
       response => {
@@ -61,21 +59,18 @@ export class NewDepenseComponent {
     );
   }
 
+  get f() {
+    return this.depenseForm.controls;
+  }
   createDepense() {
     this.submitted = true;
 
-
-    
-  
     if (this.depenseForm.invalid) {
       return;
     }
-    // get the user_id from the token
-    
+
     const user_id = this.loginService.getUserId();
 
-
-  
     const depense: Depense = {
       nom: this.f.nom.value,
       date: this.f.date.value,
@@ -88,6 +83,7 @@ export class NewDepenseComponent {
     this.depensesService.addDepense(depense).subscribe(
       response => {
         console.log(response);
+        this.depenseCreated.emit(depense);
       },
       error => {
         console.log(error);

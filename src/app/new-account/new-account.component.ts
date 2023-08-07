@@ -46,4 +46,7 @@ export class NewAccountComponent {
       );
     }
   }
+  gotoLogin() {
+    this.router.navigate(['/login']);
+  }
 }

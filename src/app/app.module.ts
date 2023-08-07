@@ -18,6 +18,7 @@ import { FilterPipe } from './depenses/filter.pipe';
 import { NewAccountComponent } from './new-account/new-account.component';
 import { NewCategoryComponent } from './new-category/new-category.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { AccountDetailsComponent } from './account-details/account-details.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
     FilterPipe,
     NewAccountComponent,
     NewCategoryComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    AccountDetailsComponent
   ],
   imports: [
     BrowserModule,

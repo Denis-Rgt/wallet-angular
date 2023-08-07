@@ -8,6 +8,12 @@
     justify-content: space-between;
     padding-top: 10px;
 }
+.close-edit-category-hidden {
+    width: 20px;
+    height: 20px;
+    margin: 5px 15px;
+}
+
 .close-edit-category img {
     width: 20px;
     height: 20px;
@@ -36,4 +42,7 @@
     cursor: pointer;
     margin: 10px auto 0 auto;
     width: 80%;
+}
+.invalid-feedback {
+    color: red;
 }

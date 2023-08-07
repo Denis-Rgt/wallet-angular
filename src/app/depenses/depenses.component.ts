@@ -75,8 +75,11 @@ export class DepensesComponent implements OnInit {
 
   openNewDepensePopup() {
     let dialogRef = this.dialog.open(NewDepenseComponent, {
-      height: '400px',
+      height: '450px',
       width: '600px'
+    });
+    dialogRef.componentInstance.depenseCreated.subscribe(() => {
+      dialogRef.close(); // Fermer la boîte de dialogue lorsque l'événement est émis
     });
     dialogRef.afterClosed().subscribe(result => {
       this.getDepenses();
@@ -101,9 +104,12 @@ export class DepensesComponent implements OnInit {
 
   editDepense(depense: any) {
     let dialogRef = this.dialog.open(EditDepenseComponent, {
-      height: '400px',
+      height: '450px',
       width: '600px',
       data: depense
+    });
+    dialogRef.componentInstance.depenseEdited.subscribe(() => {
+      dialogRef.close(); // Fermer la boîte de dialogue lorsque l'événement est émis
     });
     dialogRef.afterClosed().subscribe(result => {
       this.getDepenses();

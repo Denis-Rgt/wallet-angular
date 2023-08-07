@@ -37,6 +37,9 @@ export class CategoriesComponent implements OnInit {
       height: '400px',
       width: '600px',
     });
+    dialogRef.componentInstance.categoryCreated.subscribe(() => {
+      dialogRef.close();
+    });
     dialogRef.afterClosed().subscribe((result: any) => {
       this.getCategories();
       console.log('The dialog was closed', result);
@@ -62,6 +65,9 @@ export class CategoriesComponent implements OnInit {
       height: '400px',
       width: '600px',
       data: category
+    });
+    dialogRef.componentInstance.categoryEdited.subscribe(() => {
+      dialogRef.close();
     });
     dialogRef.afterClosed().subscribe((result: any) => {
       this.getCategories();

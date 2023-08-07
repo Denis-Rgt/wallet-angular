@@ -3,6 +3,7 @@ header {
     align-items: center;
     justify-content: space-between;
     background-color: #fff;
+    height: 50px;
   }
 
 .logo img {
@@ -30,9 +31,18 @@ nav a {
 .header-link {
   color: #d7d7d7;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 17px;
   margin: 0 15px;
 }
+.logout {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+.logout p {
+  margin : 0 10px;
+}
+
 .logout img {
   width: 30px;
   height: 30px;
@@ -40,6 +50,6 @@ nav a {
 }
 .active{
   color: #000; 
-  font-size: 18px; 
+  font-size: 17px; 
   font-weight: bold; 
 }

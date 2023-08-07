@@ -1,0 +1,15 @@
+<div class="account-details-container">
+    <div class="account-details-header">
+      <div class="close-account-details-hidden"></div>
+      <div><h2>Hello {{userName }}</h2></div>
+      <div class="close-account-details"><img src="../../../../assets/delete.png" mat-dialog-close alt=""></div>
+    </div>
+
+    <div>
+        <h3>Voici votre adresse mail : {{ userEmail }}</h3>
+    </div>
+    <div>
+        <button type="button" (click)="logout()" mat-dialog-close>Se déconnecter</button>
+    </div>
+    
+</div>

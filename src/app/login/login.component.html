@@ -1,19 +1,29 @@
-<h1>Welcome to your wallet</h1>
-<form [formGroup]="loginForm" (ngSubmit)="login()">
-    <div>
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" formControlName="email" required>
-    </div>
-    <div>
-      <label for="password">Mot de passe:</label>
-      <input type="password" id="password" formControlName="password" required>
-    </div>
-    <div>
-      <button type="submit" [disabled]="!loginForm.valid">Se connecter</button>
-    </div>
-  </form>
 
-  <button (click)="gotoDepenses()">Mes depenses</button>
-  <button (click)="logout()">Se déconnecter</button>
-  <button (click)="gotoInscription()">S'inscrire</button>
+<div class="login-container">
+
+<h1>Welcome to your wallet</h1>
+
+<form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form">
   
+  <div class="form-group">
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" formControlName="email" required>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Mot de passe:</label>
+    <input type="password" id="password" formControlName="password" required>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" [disabled]="!loginForm.valid">Se connecter</button>
+
+  </div>
+
+  <div class="form-group" id="gotoInscription">
+    <div>Je n'ai pas encore de compte :</div>
+    <button (click)="gotoInscription()">S'inscrire</button>
+  </div>
+</form>
+  
+</div>

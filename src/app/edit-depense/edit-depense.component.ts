@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DepensesService } from '../depenses.service';
 import { LoginService } from '../services/login.service';
@@ -29,6 +29,9 @@ export interface FullDepense {
   styleUrls: ['./edit-depense.component.css']
 })
 export class EditDepenseComponent {
+
+  @Output() depenseEdited = new EventEmitter<Depense>();
+
   depenseForm: FormGroup;
   submitted = false;
   categories: any = [];
@@ -78,9 +81,7 @@ export class EditDepenseComponent {
       return;
     }
     // get the user_id from the token
-    
     const user_id = this.loginService.getUserId();
-
   
     const depense: Depense = {
       nom: this.f.nom.value,
@@ -94,6 +95,7 @@ export class EditDepenseComponent {
     this.depensesService.editDepense(depense_id, depense).subscribe(
       response => {
         console.log(response);
+        this.depenseEdited.emit(depense);
       },
       error => {
         console.log(error);
