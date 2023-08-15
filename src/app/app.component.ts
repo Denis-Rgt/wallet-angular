@@ -12,7 +12,7 @@ export class AppComponent {
   constructor(private router: Router) {}
 
   
-  gotoLogin() : void {
-    this.router.navigate(['/login']);
-    }
+  // gotoLogin() : void {
+  //   this.router.navigate(['/login']);
+  //   }
 }
